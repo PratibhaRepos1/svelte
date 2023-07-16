@@ -3,11 +3,13 @@
 
 	export let name;
 	export let age;
+	let count = 100;
 	let title = '';
 	let desc = '';
 
 
 	$: uppercaseName = name.toUpperCase();
+	$: count = count * 100;
 	$: console.log(name);
 
 	$: if(name === 'Steve') {
@@ -43,6 +45,9 @@
 <textarea rows="3" bind:value="{desc}" ></textarea>
 <br>
 <ContactCard username='{name}' jobTitle='{title}' shortDesc='{desc}' />
+<br>
+<h4>This is count: {count}</h4>
+
 <!-- <button on:click={changeName}>Change Name</button> -->
 
 
