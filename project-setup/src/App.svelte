@@ -1,8 +1,13 @@
 <script>
 	import ContactCard from "./ContactCard.svelte";
+	import AddressCard from "./AddressCard.svelte";
 
 	export let name;
+	export let personName;
 	export let age;
+	let street = "";
+	let shortDescription = "";
+
 	let count = 100;
 	let title = '';
 	let desc = '';
@@ -47,7 +52,12 @@
 <ContactCard username='{name}' jobTitle='{title}' shortDesc='{desc}' />
 <br>
 <h4>This is count: {count}</h4>
-
+<hr>
+<input type="text" bind:value="{personName}">
+<input type="text" bind:value="{street}">
+<textarea rows=3 bind:value={shortDescription}></textarea>
+<AddressCard personName="{personName}" street="{street}"
+ shortDescription="{shortDescription}" />
 <!-- <button on:click={changeName}>Change Name</button> -->
 
 
